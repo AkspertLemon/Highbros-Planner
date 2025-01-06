@@ -3,23 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Timetable Extractor</title>
+    <title>Highbros Planner</title>
     <link rel="stylesheet" href="stylish.css">
     <script src="brainy.js"></script>
 </head>
 <body>
     <div class="menu">
-        <h1 style="font-size: 40px;margin-bottom: 0;">Highbrow Planner</h1>
-        <h2>Paste inspect element here:</h2>
-        <form onsubmit="handleFormSubmit(event)">
-            <label for="textInput"></label>
-            <input type="text" id="textInput" name="textInput">
-            <input type="submit" value="Click">
-        </form>
+        <h1 style="text-align: center;">Highbrow Planner</h1>
+        <h2 style="margin-left: 10%;">Paste inspect element here:</h2>
+        <textarea id="htmlInput" rows="1" cols="30" style="margin-left: 10%;"></textarea>
+        <button onclick="extractTimetable()">Extract Timetable</button>
     </div>
     <div class="menu">
-        <p id="user-table"></p>
+        <p id="output"></p>
+        <h3 id="test"></h3>
+        <h3 id="test1"></h3>
     </div>
-    <script src="brainy.js"></script>
 </body>
 </html>

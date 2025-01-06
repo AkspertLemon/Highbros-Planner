@@ -1,4 +1,11 @@
+
+function ampmTo24hr(fulltime) {
+    const time = Number(fulltime.split(":")[0]);
+    if (fulltime[6] == "P" && time != 12) {
+        return time + 12;
+    } else {return time;}}
 function extractTimetable() {
+    //Possible XSS attacks
     // Get the input HTML string
     const htmlString = document.getElementById('htmlInput').value;
     
@@ -22,11 +29,24 @@ function extractTimetable() {
 
             timetable.push({ startTime, endTime, day });
         }
-    });}
-let inputData;
-function handleFormSubmit(event) {
-    event.preventDefault();
-    inputData = document.getElementById('textInput').value;
-    console.log('Input Data:', extractTimetable(inputData));
-    document.getElementById('user-table').innerHTML=inputData
-}
+    });
+    let bintimetable = '';
+    bintimetable = '10'.repeat(30);
+    console.log(bintimetable);
+    timetable.shift();
+    document.getElementById('output').textContent = JSON.stringify(timetable, null, 2);
+    let timdif = [];
+    for (i of timetable){
+        if ((ampmTo24hr(i.endTime)-ampmTo24hr(i.startTime))==0){
+            timdif.push(1);
+        } else {timdif.push(ampmTo24hr(i.endTime)-ampmTo24hr(i.startTime));}
+        }
+    document.getElementById('test').textContent = timdif;
+    const hexString = BigInt('0b' + bintimetable).toString(16);
+    document.getElementById('test1').textContent = hexString.toUpperCase();
+    }
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelector('button').addEventListener('click', extractTimetable);
+});

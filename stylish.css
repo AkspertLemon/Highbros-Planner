@@ -2,14 +2,15 @@ body{background-color: darkslategrey;}
 .menu{
     background-color: cadetblue; 
     border-radius: 22px;
-    text-align: center;
     padding-top: 10px;
     padding-bottom: 50px;
     max-width: 500px;
     margin-bottom: 15px;
 }
-#textInput{
+#htmlInput{
     border-radius: 7px;
     background-color: aquamarine;
-    border: 0;
+    border: 5;
+    border-color: black;
+    resize: none;
 }
