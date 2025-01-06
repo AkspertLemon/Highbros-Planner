@@ -1,6 +1,13 @@
-function extractTimetable(parame) {
-    // Select the table rows
-    const rows = parame;
+function extractTimetable() {
+    // Get the input HTML string
+    const htmlString = document.getElementById('htmlInput').value;
+    
+    // Create a temporary DOM element to parse the HTML string
+    const tempDiv = document.createElement('div');
+    tempDiv.innerHTML = htmlString;
+
+    // Select the table rows from the parsed HTML
+    const rows = tempDiv.querySelectorAll('table tbody tr');
 
     // Initialize an array to hold the extracted data
     const timetable = [];
