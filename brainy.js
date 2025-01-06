@@ -3,7 +3,22 @@ function ampmTo24hr(fulltime) {
     const time = Number(fulltime.split(":")[0]);
     if (fulltime[6] == "P" && time != 12) {
         return time + 12;
-    } else {return time;}}
+    } else {return time;}
+}
+function dayOffset(day) {
+    switch (day.toLowerCase()) {
+        case "monday":
+            return 0;
+        case "tuesday":
+            return 12;
+        case "wednesday":
+            return 24;
+        case "thursday":
+            return 36;
+        case "friday":
+            return 48;
+    }
+}
 function extractTimetable() {
     //Possible XSS attacks
     // Get the input HTML string
@@ -30,19 +45,27 @@ function extractTimetable() {
             timetable.push({ startTime, endTime, day });
         }
     });
-    let bintimetable = '';
-    bintimetable = '10'.repeat(30);
-    console.log(bintimetable);
-    timetable.shift();
     document.getElementById('output').textContent = JSON.stringify(timetable, null, 2);
-    let timdif = [];
+    let bintimetable = '0'.repeat(60).split('');
+    timetable.shift();
+    //Looping through timetable and adding the times to the binary timetable
     for (i of timetable){
+        let count;
+        startTime24hr = ampmTo24hr(i.startTime);
+        endTime24hr = ampmTo24hr(i.endTime);
+        dayOffsetValue = dayOffset(i.day);
+        //console.log(`startTime24hr: ${startTime24hr}, endTime24hr: ${endTime24hr}, dayOffsetValue: ${dayOffsetValue}`);
         if ((ampmTo24hr(i.endTime)-ampmTo24hr(i.startTime))==0){
-            timdif.push(1);
-        } else {timdif.push(ampmTo24hr(i.endTime)-ampmTo24hr(i.startTime));}
+            count=1;} else {count=(ampmTo24hr(i.endTime)-ampmTo24hr(i.startTime));}
+            for (j=0;j<count;j++){
+                //console.log(j+dayOffset(i.day)+ampmTo24hr(i.startTime));
+                bintimetable[j+dayOffset(i.day)+ampmTo24hr(i.startTime)-6] = '1';
+            }
         }
-    document.getElementById('test').textContent = timdif;
-    const hexString = BigInt('0b' + bintimetable).toString(16);
+    //document.getElementById('test').textContent = bintimetable;
+    const hexString = BigInt('0b' + bintimetable.join('')).toString(16);
+    console.log(bintimetable);
+    document.getElementById('test').textContent = bintimetable.join('');
     document.getElementById('test1').textContent = hexString.toUpperCase();
     }
 
