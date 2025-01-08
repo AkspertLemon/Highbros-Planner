@@ -7,22 +7,38 @@ body{
     position: absolute;
     top: 10px;
     left: 7%;
-    height: 200px;
+    height: 21%;
     }
 #tables{
     position: absolute;
     bottom: 3px;
     left: 7%;
-    height: 540px;
+    height: 60%;
     }
 #calendar{
     position: absolute;
     right: 7%;
     height: 90%;
     width: 55%;
-
 }
-
+#extractButton{
+    position: absolute;
+    background-color: yellowgreen;
+    border-radius: 5px;
+    margin-left: 3%;
+}
+#htmlInput{color: #757575;}
+#nameInput{
+    margin-bottom: 3%;
+}
+.forms{
+    border-radius: 7px;
+    background-color: aquamarine;
+    border: 5;
+    border-color: black;
+    width: 57%;
+    margin-left: 10%;
+}
 .menu{
     background-color: cadetblue; 
     border-radius: 22px;
@@ -31,11 +47,4 @@ body{
     width: 25%;
     margin-bottom: 15px;
     border: 3px solid black;
-}
-#htmlInput{
-    border-radius: 7px;
-    background-color: aquamarine;
-    border: 5;
-    border-color: black;
-    resize: none;
 }

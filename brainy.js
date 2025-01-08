@@ -23,7 +23,7 @@ function extractTimetable() {
     //Possible XSS attacks
     // Get the input HTML string
     const htmlString = document.getElementById('htmlInput').value;
-    
+    const name = document.getElementById('nameInput').value;
     // Create a temporary DOM element to parse the HTML string
     const tempDiv = document.createElement('div');
     tempDiv.innerHTML = htmlString;
@@ -64,8 +64,7 @@ function extractTimetable() {
     //document.getElementById('test').textContent = bintimetable;
     const hexString = BigInt('0b' + bintimetable.join('')).toString(16).toUpperCase();
     //hexstring is the output
-    document.getElementById("htmlInput").textContent = 'hello';
-    document.getElementById("hexcode").innerHTML = hexString;
+    document.getElementById("hexcode").innerHTML = name+':'+hexString;
     //console.log(hexString);
     }
 
