@@ -1,11 +1,36 @@
-body{background-color: darkslategrey;}
+body{
+    background-color: darkslategrey;
+    background-image: url(Pictures/BG-2.png);
+    font:sans-serif;
+}
+#extractor{
+    position: absolute;
+    top: 10px;
+    left: 7%;
+    height: 200px;
+    }
+#tables{
+    position: absolute;
+    bottom: 3px;
+    left: 7%;
+    height: 540px;
+    }
+#calendar{
+    position: absolute;
+    right: 7%;
+    height: 90%;
+    width: 55%;
+
+}
+
 .menu{
     background-color: cadetblue; 
     border-radius: 22px;
     padding-top: 10px;
     padding-bottom: 50px;
-    max-width: 500px;
+    width: 25%;
     margin-bottom: 15px;
+    border: 3px solid black;
 }
 #htmlInput{
     border-radius: 7px;

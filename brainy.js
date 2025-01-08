@@ -45,7 +45,6 @@ function extractTimetable() {
             timetable.push({ startTime, endTime, day });
         }
     });
-    document.getElementById('output').textContent = JSON.stringify(timetable, null, 2);
     let bintimetable = '0'.repeat(60).split('');
     timetable.shift();
     //Looping through timetable and adding the times to the binary timetable
@@ -63,10 +62,11 @@ function extractTimetable() {
             }
         }
     //document.getElementById('test').textContent = bintimetable;
-    const hexString = BigInt('0b' + bintimetable.join('')).toString(16);
-    console.log(bintimetable);
-    document.getElementById('test').textContent = bintimetable.join('');
-    document.getElementById('test1').textContent = hexString.toUpperCase();
+    const hexString = BigInt('0b' + bintimetable.join('')).toString(16).toUpperCase();
+    //hexstring is the output
+    document.getElementById("htmlInput").textContent = 'hello';
+    document.getElementById("hexcode").innerHTML = hexString;
+    //console.log(hexString);
     }
 
 

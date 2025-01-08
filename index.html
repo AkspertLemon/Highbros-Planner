@@ -8,16 +8,17 @@
     <script src="brainy.js"></script>
 </head>
 <body>
-    <div class="menu">
+    <div class="menu" id="extractor">
         <h1 style="text-align: center;">Highbrow Planner</h1>
         <h2 style="margin-left: 10%;">Paste inspect element here:</h2>
         <textarea id="htmlInput" rows="1" cols="30" style="margin-left: 10%;"></textarea>
         <button onclick="extractTimetable()">Extract Timetable</button>
+        <h3 style="margin-left: 10%;" id="hexcode"> </h3>
     </div>
-    <div class="menu">
-        <p style="margin-bottom: 5%;" id="output"></p>
-        <p id="test"></p>
-        <h3 id="test1"></h3>
+    <div class="menu" id="tables">
     </div>
+    <div class="menu" id="calendar">
+    </div>
+        
 </body>
 </html>
