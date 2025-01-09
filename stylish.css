@@ -21,14 +21,18 @@ body{
     height: 90%;
     width: 55%;
 }
-#extractButton{
+#extractButton,#copyButton{
     position: absolute;
     background-color: yellowgreen;
     border-radius: 5px;
-    margin-left: 3%;
+    margin-left: 10%; margin-right: auto;
 }
-#htmlInput{color: #757575;}
+#copyButton:disabled{
+    opacity: 0;
+}
+#htmlInput{color: #757575;resize: none;}
 #nameInput{
+    color: black;
     margin-bottom: 3%;
 }
 .forms{
@@ -36,7 +40,7 @@ body{
     background-color: aquamarine;
     border: 5;
     border-color: black;
-    width: 57%;
+    width: 48%;
     margin-left: 10%;
 }
 .menu{

@@ -61,14 +61,33 @@ function extractTimetable() {
                 bintimetable[j+dayOffset(i.day)+ampmTo24hr(i.startTime)-6] = '1';
             }
         }
-    //document.getElementById('test').textContent = bintimetable;
+
     const hexString = BigInt('0b' + bintimetable.join('')).toString(16).toUpperCase();
     //hexstring is the output
+    if (hexString.length < 12) {
+        document.getElementById("copyButton").disabled = true
+        document.getElementById("hexcode").innerHTML = "Invalid Timetable";
+    } else {
+    document.getElementById("copyButton").disabled = false
     document.getElementById("hexcode").innerHTML = name+':'+hexString;
-    //console.log(hexString);
-    }
+    };
+}
+// Copy the hex code to the clipboard
+function copyHexCode() {
+    const hexcodeElement = document.getElementById('hexcode');
+    const hexcodeText = hexcodeElement.innerHTML;
 
-
+    navigator.clipboard.writeText(hexcodeText).then(() => {
+        console.log('Hex code copied to clipboard');
+    }).catch(err => {
+        console.error('Failed to copy hex code: ', err);
+    });
+    document.getElementById("copyButton").innerHTML = "Copied!";
+    setTimeout(() => {
+        document.getElementById("copyButton").innerHTML = "Copy";
+    }, 1000);
+}
 document.addEventListener('DOMContentLoaded', () => {
-    document.querySelector('button').addEventListener('click', extractTimetable);
+    document.querySelector('extractButton').addEventListener('click', extractTimetable);
+    document.getElementById('copyButton').addEventListener('click', copyHexCode);
 });
