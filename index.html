@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="stylish.css">
     <script src="extractor.js"></script>
     <script src="copy.js"></script>
+    <script src="calGen.js"></script>
 </head>
 <body>
     <div class="menu" id="extractor">
@@ -14,14 +15,18 @@
         <h3 style="margin-left: 10%; margin-bottom: 2%">Fill these to get code:</h3>
         <input type="text" id="nameInput" class="forms" placeholder="Enter your name">
         <textarea id="htmlInput" class="forms" rows="1">Paste inspect element here:</textarea>
-        <button id="extractButton" onclick="extractTimetable()">Extract</button><br>
+        <button id="extractButton" onclick="extractTimetable()">Extract<ion-icon name="bulb-outline"></ion-icon></button><br>
         <h3 style="margin-left: 10%;display: inline; background-color: rgb(6, 116, 79);padding: 3px 5px;opacity: 0;" id="hexcode"> </h3>
         <button id="copyButton" onclick="copyHexCode()" disabled>Copy</button>
     </div>
     <div class="menu" id="tables">
+        <input type="text" id="nameHexInput" class="forms" placeholder="Enter name#hexcode">
+        <button id="addButton">+</button>
+        <ul id="nameHexList"></ul>
     </div>
     <div class="menu" id="calendar">
     </div>
-        
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 </html>

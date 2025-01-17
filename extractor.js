@@ -75,5 +75,4 @@ function extractTimetable() {
     };
 document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('extractButton').addEventListener('click', extractTimetable);
-    document.getElementById('copyButton').addEventListener('click', copyHexCode);
 });

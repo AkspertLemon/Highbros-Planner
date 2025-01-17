@@ -14,6 +14,5 @@ function copyHexCode() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    document.getElementById('extractButton').addEventListener('click', extractTimetable);
     document.getElementById('copyButton').addEventListener('click', copyHexCode);
 });
