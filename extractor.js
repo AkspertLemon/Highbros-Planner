@@ -38,9 +38,9 @@ function extractTimetable() {
     rows.forEach((row, index) => {
         // Skip the header row and the separator rows
         if (index > 0 && row.cells.length === 8) {
-            const startTime = row.cells[3].innerText.trim();
-            const endTime = row.cells[4].innerText.trim();
-            const day = row.cells[7].innerText.trim();
+            const startTime = row.cells[6].innerText.trim();
+            const endTime = row.cells[7].innerText.trim();
+            const day = row.cells[1].innerText.trim();
 
             timetable.push({ startTime, endTime, day });
         }

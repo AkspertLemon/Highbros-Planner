@@ -5,6 +5,7 @@ const inputValue = nameHexInput.value;
 
 if (inputValue.includes('#')) {
     const name = inputValue.split('#')[0];
+    // we can extract the hexcode right here
     const listItem = document.createElement('li');
     listItem.textContent = name;
 
