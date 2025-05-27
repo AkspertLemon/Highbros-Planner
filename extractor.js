@@ -1,10 +1,10 @@
-
 function ampmTo24hr(fulltime) {
     const time = Number(fulltime.split(":")[0]);
-    if (fulltime[6] == "P" && time != 12) {
+    if (fulltime.split(" ")[1] == "PM" && time != 12) {
         return time + 12;
     } else {return time;}
 }
+
 function dayOffset(day) {
     switch (day.toLowerCase()) {
         case "monday":
@@ -17,9 +17,13 @@ function dayOffset(day) {
             return 36;
         case "friday":
             return 48;
+        default:
+            return -1;
     }
 }
+
 function extractTimetable() {
+    console.log("Changed in nvim")  // Button pressed
     //Possible XSS attacks
     // Get the input HTML string
     const htmlString = document.getElementById('htmlInput').value;
@@ -27,23 +31,25 @@ function extractTimetable() {
     // Create a temporary DOM element to parse the HTML string
     const tempDiv = document.createElement('div');
     tempDiv.innerHTML = htmlString;
-
     // Select the table rows from the parsed HTML
     const rows = tempDiv.querySelectorAll('table tbody tr');
-
     // Initialize an array to hold the extracted data
     const timetable = [];
-
     // Loop through the rows and extract time and day
     rows.forEach((row, index) => {
+        // const cellValues = Array.from(row.cells).map(cell => cell.innerText.trim());
         // Skip the header row and the separator rows
-        if (index > 0 && row.cells.length === 8) {
+        if (index > 0 && row.cells.length === 10) {
             const startTime = row.cells[6].innerText.trim();
             const endTime = row.cells[7].innerText.trim();
             const day = row.cells[1].innerText.trim();
-
-            timetable.push({ startTime, endTime, day });
-        }
+            if (dayOffset(day) != -1) {
+              timetable.push({ startTime, endTime, day });
+              if (index==2) {
+                console.log(startTime,endTime,day)     // FIX: Monday phyics 2oclock class not showing
+              }
+            }
+            } 
     });
     let bintimetable = '0'.repeat(60).split('');
     timetable.shift();
@@ -53,21 +59,24 @@ function extractTimetable() {
         startTime24hr = ampmTo24hr(i.startTime);
         endTime24hr = ampmTo24hr(i.endTime);
         dayOffsetValue = dayOffset(i.day);
-        //console.log(`startTime24hr: ${startTime24hr}, endTime24hr: ${endTime24hr}, dayOffsetValue: ${dayOffsetValue}`);
+        if (dayOffsetValue == 0) {
+          console.log(`startTime24hr: ${startTime24hr}, endTime24hr: ${endTime24hr}, dayOffsetValue: ${dayOffsetValue}`);
+        }
         if ((ampmTo24hr(i.endTime)-ampmTo24hr(i.startTime))==0){
             count=1;} else {count=(ampmTo24hr(i.endTime)-ampmTo24hr(i.startTime));}
             for (j=0;j<count;j++){
-                //console.log(j+dayOffset(i.day)+ampmTo24hr(i.startTime));
+                // console.log(j+dayOffset(i.day)+ampmTo24hr(i.startTime));
                 bintimetable[j+dayOffset(i.day)+ampmTo24hr(i.startTime)-6] = '1';
             }
         }
-    console.log(bintimetable.join(''));
+    // console.log(bintimetable.join(''));
     const hexString = BigInt('0b' + bintimetable.join('')).toString(16).toUpperCase();
     //hexstring is the output
     document.getElementById("hexcode").style.opacity = 1;
-    if (hexString.length < 12) {
+    document.getElementById("hexcode").innerHTML = hexString;
+    if (hexString.length < 5) {
         document.getElementById("copyButton").disabled = true
-        document.getElementById("hexcode").innerHTML = "Invalid Timetable";
+        document.getElementById("hexcode").innerHTML = "Invalid htmlString, Err 3";
     } else {
     document.getElementById("copyButton").disabled = false
     document.getElementById("hexcode").innerHTML = name+'#'+hexString;

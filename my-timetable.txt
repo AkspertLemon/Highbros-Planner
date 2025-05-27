@@ -1,1 +1,275 @@
 Abdullah#8E0B81080CC200
+01000100000000111000000011001000000001100100001000100000
+<table class="table  " style="font-size:13px;">
+ <tbody><tr> <th colspan="10" style="text-align:center;background-color:#F5C5AF"> <b>CLASS SCHEDULE</b> </th></tr>  
+ <tr>
+ <td style="text-align:center"> <b> Campus </b> </td>
+ <td style="text-align:center"> <b>Day </b> </td>
+  <td style="text-align:center"> <b>Status </b> </td>
+<td style="text-align:center"> <b> Class </b> </td>
+<td style="text-align:center"><b> Subject </b></td>
+<td style="text-align:center"><b> Group</b> </td>
+<td style="text-align:center"><b> Start Time </b></td>
+<td style="text-align:center"><b> End Time </b></td>
+<td style="text-align:center"><b> Teacher Name</b> </td>
+<td style="text-align:center"> <b>Room # </b> </td>
+
+</tr>  
+     
+
+<tr>
+<td style="text-align:center"> A level North Nazimabad </td>
+<td style="text-align:center"> Monday </td>
+<td style="text-align:center"> Physical </td>
+<td style="text-align:center"> AS </td>
+<td style="text-align:center"> Physics </td>
+<td style="text-align:center"> 1 </td>
+<td style="text-align:center"> 02:00 PM </td>
+<td style="text-align:center"> 02:55 PM </td>
+<td style="text-align:center"> Syed Yawar Abbas Naqvi </td>
+<td style="text-align:center"> Audi </td>
+
+</tr>
+
+
+
+<tr>
+<td style="text-align:center"> A level North Nazimabad </td>
+<td style="text-align:center"> Monday </td>
+<td style="text-align:center"> Physical </td>
+<td style="text-align:center"> AS </td>
+<td style="text-align:center"> Mathematics </td>
+<td style="text-align:center"> 1 </td>
+<td style="text-align:center"> 11:00 AM </td>
+<td style="text-align:center"> 11:55 AM </td>
+<td style="text-align:center"> Muhammad Zeeshan </td>
+<td style="text-align:center"> 2 </td>
+
+</tr>
+
+
+
+<tr>
+<td style="text-align:center"> A level North Nazimabad </td>
+<td style="text-align:center"> Monday </td>
+<td style="text-align:center"> Physical </td>
+<td style="text-align:center"> AS </td>
+<td style="text-align:center"> Computer Science </td>
+<td style="text-align:center"> 1 </td>
+<td style="text-align:center"> 03:00 PM </td>
+<td style="text-align:center"> 03:55 PM </td>
+<td style="text-align:center"> Muhammad Ali Khan </td>
+<td style="text-align:center"> 1 </td>
+
+</tr>
+
+
+<tr> <td colspan="10" style="text-align:center;background-color:#DAFAFC"> <b> </b> </td></tr>
+<tr>
+<td style="text-align:center"> A level North Nazimabad </td>
+<td style="text-align:center"> Tuesday </td>
+<td style="text-align:center"> Physical </td>
+<td style="text-align:center"> AS </td>
+<td style="text-align:center"> Physics </td>
+<td style="text-align:center"> 1 </td>
+<td style="text-align:center"> 02:00 PM </td>
+<td style="text-align:center"> 02:55 PM </td>
+<td style="text-align:center"> Syed Yawar Abbas Naqvi </td>
+<td style="text-align:center"> Audi </td>
+
+</tr>
+
+
+
+<tr>
+<td style="text-align:center"> A level North Nazimabad </td>
+<td style="text-align:center"> Tuesday </td>
+<td style="text-align:center"> Physical </td>
+<td style="text-align:center"> AS </td>
+<td style="text-align:center"> Physics - Lab </td>
+<td style="text-align:center"> 3 </td>
+<td style="text-align:center"> 12:00 PM </td>
+<td style="text-align:center"> 02:00 PM </td>
+<td style="text-align:center"> Khusro Shaukat Raza Khan </td>
+<td style="text-align:center"> Lab-Phy </td>
+
+</tr>
+
+
+
+<tr>
+<td style="text-align:center"> A level North Nazimabad </td>
+<td style="text-align:center"> Tuesday </td>
+<td style="text-align:center"> Physical </td>
+<td style="text-align:center"> AS </td>
+<td style="text-align:center"> Mathematics </td>
+<td style="text-align:center"> 1 </td>
+<td style="text-align:center"> 12:00 PM </td>
+<td style="text-align:center"> 12:55 PM </td>
+<td style="text-align:center"> Muhammad Zeeshan </td>
+<td style="text-align:center"> 2 </td>
+
+</tr>
+
+
+<tr> <td colspan="10" style="text-align:center;background-color:#DAFAFC"> <b> </b> </td></tr>
+<tr>
+<td style="text-align:center"> A level North Nazimabad </td>
+<td style="text-align:center"> Wednesday </td>
+<td style="text-align:center"> Physical </td>
+<td style="text-align:center"> AS </td>
+<td style="text-align:center"> Physics </td>
+<td style="text-align:center"> 1 </td>
+<td style="text-align:center"> 02:00 PM </td>
+<td style="text-align:center"> 02:55 PM </td>
+<td style="text-align:center"> Syed Yawar Abbas Naqvi </td>
+<td style="text-align:center"> Audi </td>
+
+</tr>
+
+
+
+<tr>
+<td style="text-align:center"> A level North Nazimabad </td>
+<td style="text-align:center"> Wednesday </td>
+<td style="text-align:center"> Physical </td>
+<td style="text-align:center"> AS </td>
+<td style="text-align:center"> Mathematics </td>
+<td style="text-align:center"> 1 </td>
+<td style="text-align:center"> 10:00 AM </td>
+<td style="text-align:center"> 10:55 AM </td>
+<td style="text-align:center"> Muhammad Zeeshan </td>
+<td style="text-align:center"> 2 </td>
+
+</tr>
+
+
+
+<tr>
+<td style="text-align:center"> A level North Nazimabad </td>
+<td style="text-align:center"> WEDNESDAY </td>
+<td style="text-align:center"> Physical </td>
+<td style="text-align:center"> AS </td>
+<td style="text-align:center"> Computer Science - Lab </td>
+<td style="text-align:center"> 2 </td>
+<td style="text-align:center"> 11:30 AM </td>
+<td style="text-align:center"> 12:00 PM </td>
+<td style="text-align:center"> Abdul Rehman </td>
+<td style="text-align:center"> Lab-Com </td>
+
+</tr>
+
+
+<tr> <td colspan="10" style="text-align:center;background-color:#DAFAFC"> <b> </b> </td></tr>
+<tr>
+<td style="text-align:center"> A level North Nazimabad </td>
+<td style="text-align:center"> Thursday </td>
+<td style="text-align:center"> Physical </td>
+<td style="text-align:center"> AS </td>
+<td style="text-align:center"> Physics </td>
+<td style="text-align:center"> 1 </td>
+<td style="text-align:center"> 2:00 PM </td>
+<td style="text-align:center"> 2:55 PM </td>
+<td style="text-align:center"> Syed Yawar Abbas Naqvi </td>
+<td style="text-align:center"> Audi </td>
+
+</tr>
+
+
+
+<tr>
+<td style="text-align:center"> A level North Nazimabad </td>
+<td style="text-align:center"> Thursday </td>
+<td style="text-align:center"> Physical </td>
+<td style="text-align:center"> AS </td>
+<td style="text-align:center"> Mathematics </td>
+<td style="text-align:center"> 1 </td>
+<td style="text-align:center"> 12:00 PM </td>
+<td style="text-align:center"> 12:55 PM </td>
+<td style="text-align:center"> Muhammad Zeeshan </td>
+<td style="text-align:center"> 2 </td>
+
+</tr>
+
+
+
+<tr>
+<td style="text-align:center"> A level North Nazimabad </td>
+<td style="text-align:center"> Thursday </td>
+<td style="text-align:center"> Physical </td>
+<td style="text-align:center"> AS </td>
+<td style="text-align:center"> Computer Science </td>
+<td style="text-align:center"> 1 </td>
+<td style="text-align:center"> 03:00 PM </td>
+<td style="text-align:center"> 03:55 PM </td>
+<td style="text-align:center"> Muhammad Ali Khan </td>
+<td style="text-align:center"> 1 </td>
+
+</tr>
+
+
+
+<tr>
+<td style="text-align:center"> A level North Nazimabad </td>
+<td style="text-align:center"> THURSDAY </td>
+<td style="text-align:center"> Physical </td>
+<td style="text-align:center"> AS </td>
+<td style="text-align:center"> Mathematics - Tutorial </td>
+<td style="text-align:center"> 2 </td>
+<td style="text-align:center"> 11:00 AM </td>
+<td style="text-align:center"> 12:00 PM </td>
+<td style="text-align:center"> Abdul Samad </td>
+<td style="text-align:center"> 9 </td>
+
+</tr>
+
+
+<tr> <td colspan="10" style="text-align:center;background-color:#DAFAFC"> <b> </b> </td></tr>
+<tr>
+<td style="text-align:center"> A level North Nazimabad </td>
+<td style="text-align:center"> FRIDAY </td>
+<td style="text-align:center"> Physical </td>
+<td style="text-align:center"> AS </td>
+<td style="text-align:center"> Physics </td>
+<td style="text-align:center"> 1 </td>
+<td style="text-align:center"> 12:00 PM </td>
+<td style="text-align:center"> 01:00 PM </td>
+<td style="text-align:center"> Syed Yawar Abbas Naqvi </td>
+<td style="text-align:center"> Audi </td>
+
+</tr>
+
+
+
+<tr>
+<td style="text-align:center"> A level North Nazimabad </td>
+<td style="text-align:center"> Friday </td>
+<td style="text-align:center"> Physical </td>
+<td style="text-align:center"> AS </td>
+<td style="text-align:center"> Computer Science </td>
+<td style="text-align:center"> 1 </td>
+<td style="text-align:center"> 08:00 AM </td>
+<td style="text-align:center"> 9:00 AM </td>
+<td style="text-align:center"> Muhammad Ali Khan </td>
+<td style="text-align:center"> 1 </td>
+
+</tr>
+
+
+<tr> <td colspan="10" style="text-align:center;background-color:#DAFAFC"> <b> </b> </td></tr>
+<tr>
+<td style="text-align:center"> A level North Nazimabad </td>
+<td style="text-align:center"> SATURDAY </td>
+<td style="text-align:center"> Physical </td>
+<td style="text-align:center"> AS </td>
+<td style="text-align:center"> Mathematics </td>
+<td style="text-align:center"> 1 </td>
+<td style="text-align:center"> 11:00 AM </td>
+<td style="text-align:center"> 12:30 PM </td>
+<td style="text-align:center"> Muhammad Zeeshan </td>
+<td style="text-align:center"> 2 </td>
+
+</tr>
+
+
+<tr> <td colspan="10" style="text-align:center;background-color:#DAFAFC"> <b> </b> </td></tr></tbody></table>
