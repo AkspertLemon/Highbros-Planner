@@ -65,6 +65,10 @@ function CalendarGenerate() {
         continue;
       }
       let bin = parseInt(hexcode, 16).toString(2).padStart(60, '0');
+      // If bin is longer than 60, take only the last 60 bits
+      if (bin.length > 60) {
+        bin = bin.slice(-60);
+      }
       for (let j = 0; j < 60; j++) {
         if (bin[j] === '1') {
           calendar[j].push(name);
@@ -74,13 +78,28 @@ function CalendarGenerate() {
   }
   console.log("Calendar generated");
   console.log(calendar);
-  // Format calendar as 5 rows and 12 columns
-  let html = "<table style='width:100%;text-align:center;'>";
+  // Format calendar as 5 rows and 12 columns with day headers and time column headers
+  const dayHeaders = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
+  const timeHeaders = [
+    "6am", "7am", "8am", "9am", "10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm"
+  ];
+  let html = "<table style='width:100%;height:90vh;text-align:center;border-collapse:collapse;' border='1'><tr><th></th>";
+  for (let col = 0; col < 12; col++) {
+    html += `<th style='background:#eee;'>${timeHeaders[col]}</th>`;
+  }
+  html += "</tr>";
   for (let row = 0; row < 5; row++) {
-    html += "<tr>";
+    html += `<tr><th style='background:#eee;'>${dayHeaders[row]}</th>`;
     for (let col = 0; col < 12; col++) {
       const idx = row * 12 + col;
-      html += `<td>${calendar[idx].join("/")}</td>`;
+      const cellData = calendar[idx].join("/");
+      // You can change the cell background colors here:
+      // Green for empty cells, red for filled cells
+      if (cellData) {
+        html += `<td style='background:#fcc'>${cellData}</td>`; // Red for filled
+      } else {
+        html += `<td style='background:#cfc'>Free</td>`; // Green for empty
+      }
     }
     html += "</tr>";
   }
