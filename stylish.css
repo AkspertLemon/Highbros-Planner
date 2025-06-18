@@ -1,32 +1,33 @@
-body{
-    background-color: darkslategrey;
+#bg,body {
+    background-color: #1d0404;
     background-image: url(Pictures/BG-2.png);
     font:sans-serif;
 }
-#extractor{
+/* #extractor{
     position: absolute;
     top: 10px;
     left: 7%;
     height: 21%;
-    }
+    } */
 #tables{
-    position: absolute;
+    /* position: absolute;
     bottom: 3px;
-    left: 7%;
-    height: 60%;
+    left: 7%; */
+    /* height: 90%; */
     }
 #calendar{
-    position: absolute;
-    right: 7%;
-    height: 90%;
-    width: 55%;
+    /* position: absolute;
+    right: 7%; */
+    /* height: 90%; */
+    /* width: 55%; */
 }
 #extractButton,#copyButton{
     cursor: pointer;
-    position: absolute;
+    /* position: absolute; */
     background-color: yellowgreen;
     border-radius: 5px;
-    margin-left: 10%; margin-right: auto;
+    /* margin-left: 10%; margin-right: auto;
+    width:5%; */
 }
 #extractButton:hover,#copyButton:hover{
     background-color: rgb(182, 228, 89);
@@ -57,10 +58,10 @@ body{
 .menu{
     background-color: cadetblue; 
     border-radius: 22px;
-    padding-top: 10px;
+    /* padding-top: 10px;
     padding-bottom: 50px;
     width: 25%;
-    margin-bottom: 15px;
+    margin-bottom: 15px; */
     border: 3px solid black;
 }
 input:-webkit-autofill,
