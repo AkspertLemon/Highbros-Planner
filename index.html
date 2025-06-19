@@ -12,25 +12,35 @@
     <!-- <link rel="stylish" href="scss/custom.scss">  -->
 </head>
 <body>
-    <div class="container">
+    <div class="container-fluid" style="height: 100%;">
         <div class="row">
          <div class="col-lg-4">
             <div class="menu container" id="extractor">
-                <h1 style="text-align: center;" class="col-12">Cal Generator</h1>
-                <h3 style="margin-left: 10%; margin-bottom: 2%" class="col-12">Fill these to get code:</h3>
-                <input type="text" id="nameInput" class="forms col-8" placeholder="Enter your name">
-                <textarea id="htmlInput" class="forms col-8" rows="1">Paste inspect element here:</textarea>
-                <button id="extractButton" class="col-2" onclick="extractTimetable()">Extract<ion-icon name="bulb-outline"></ion-icon></button><br>
-                <h3 style="margin-left: 10%;display: inline; background-color: rgb(6, 116, 79);padding: 3px 5px;opacity: 0;" id="hexcode"> </h3>
-                <button id="copyButton" onclick="copyHexCode()" disabled>CopCalendery</button>
+                <h1 style="text-align: center;" class="col-12 display-5"><strong>Cal Generator</strong></h1>
+                <p style="margin-bottom: 2%" class="col-12 h4">Fill these to get code:</p>
+                <input type="text" id="nameInput" class="forms col-11" placeholder="Enter your name">
+                <div class="row justify-content-center">
+                    <textarea id="htmlInput" class="forms col-8" rows="1">Paste inspect element here:</textarea>
+                    <br class="col-1">
+                    <button style="white-space: nowrap;" id="extractButton" class="col-auto" onclick="extractTimetable()">Extract<ion-icon name="bulb-outline"></ion-icon></button>
+                </div>
+                <div class="row justify-content-center" style="margin-bottom: 1em;margin-top: 1em;">
+                     <h3 style="border: dashed;" id="hexcode" class="col-7"> </h3>
+                     <br class="col-1">
+                     <button  class="col-auto" id="copyButton" onclick="copyHexCode()" disabled>Copy</button>
+                </div>
             </div>
-            <div class="menu" id="tables">
-                <input type="text" id="nameHexInput" class="forms" placeholder="Enter name#hexcode">
-                <button id="addButton">+</button>
+            <br>
+            <div class="menu container" id="tables">
+                <div class="row justify-content-center" style="margin-top: 1em;">
+                    <input class="col-9" type="text" id="nameHexInput" class="forms" placeholder="Enter name#hexcode">
+                    <br class="col-1">
+                    <button class="col-1" id="addButton">+</button>
+                </div>
                 <ul id="nameHexList"></ul>
             </div>
          </div>
-         <div class="col-7" id="calendar" style="border-color: black;border-style: dashed;">
+         <div class="col-7 container-fluid mt-3 w-auto" id="calendar" style="border-color: black;border-style: dashed;">
              <h2 id="calendarData"></h2>
          </div>
         </div>

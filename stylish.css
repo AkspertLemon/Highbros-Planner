@@ -12,8 +12,8 @@
 #tables{
     /* position: absolute;
     bottom: 3px;
-    left: 7%; */
-    /* height: 90%; */
+    left: 7%; 
+    height: 90%; */
     }
 #calendar{
     /* position: absolute;
@@ -25,7 +25,9 @@
     cursor: pointer;
     /* position: absolute; */
     background-color: yellowgreen;
-    border-radius: 5px;
+    border-radius: 0.5em;
+    text-align: left;
+    font-size: small;
     /* margin-left: 10%; margin-right: auto;
     width:5%; */
 }
@@ -35,7 +37,7 @@
 #copyButton:disabled{
     opacity: 0;
 }
-#htmlInput{color: #757575;resize: none;}
+#htmlInput{color: #8a8888;resize: none;}
 #nameInput{
     color: black;
     margin-bottom: 3%;
@@ -52,8 +54,6 @@
     background-color: aquamarine;
     border: 5;
     border-color: black;
-    width: 48%;
-    margin-left: 10%;
 }
 .menu{
     background-color: cadetblue; 
