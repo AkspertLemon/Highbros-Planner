@@ -16,6 +16,7 @@
     <div class="container-fluid" style="height: 100%;">
         <div class="row mt-3">
          <div class="col-12 col-lg-4 mt-3">
+            <!-- Extractor Start -->
             <div class="menu container" id="extractor">
                 <h1 style="text-align: center;" class="col-12 display-5"><strong>Cal Generator</strong></h1>
                 <p style="margin-bottom: 2%" class="col-12 h4">Fill these to get code:</p>
@@ -25,6 +26,7 @@
                     <br class="col-1">
                     <button style="white-space: nowrap;" id="extractButton" class="col-auto" onclick="extractTimetable()">Extract<ion-icon name="bulb-outline"></ion-icon></button>
                 </div>
+            <!-- Copy Hexcode -->
                 <div class="row justify-content-center" style="margin-bottom: 1em;margin-top: 1em;">
                      <h3 id="hexcode" class="col-7"> </h3>
                      <br class="col-1">
@@ -32,6 +34,7 @@
                 </div>
             </div>
             <br>
+            <!-- Table section left -->
             <div class="menu container" id="tables">
                 <div class="row justify-content-center" style="margin-top: 1em;">
                     <input class="col-9" type="text" id="nameHexInput" class="forms" placeholder="Enter name#hexcode">
@@ -41,6 +44,8 @@
                 <ul id="nameHexList"></ul>
             </div>
          </div>
+         <!-- Left side end -->
+         <!-- Calender Start -->
          <div class="menu col-12 col-lg-8 mt-3" id="calendar">
             <div>
                 <div id="calendarData"></div>
@@ -48,7 +53,7 @@
          </div>
         </div>
     </div>
-    
+    <!-- Icons Ions for copy button -->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
