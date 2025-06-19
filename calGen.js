@@ -97,3 +97,8 @@ function CalendarGenerate() {
   document.getElementById("calendarData").innerHTML = html;
   // calendar array is now filled as specified
 }
+document.addEventListener('DOMContentLoaded',()=>{
+  document.getElementById('generateButton').addEventListener('click',()=>{
+    CalendarGenerate();
+  })
+})

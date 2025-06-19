@@ -92,7 +92,6 @@ input:-webkit-autofill:active{
     background: #e6f7f1;
     margin: 0 auto;
     font-size: 0.5em;
-    border-radius: 2em;
 }
 #calendarTable th, #calendarTable td {
     border: 1px solid #1b4d3e;
