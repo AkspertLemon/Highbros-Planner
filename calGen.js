@@ -74,17 +74,26 @@ function CalendarGenerate() {
   }
   console.log("Calendar generated");
   console.log(calendar);
-  // Format calendar as 5 rows and 12 columns
-  let html = "<table style='width:100%;text-align:center;'>";
+  // Format calendar as 5 rows and 12 columns with headers
+  const weekdays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
+  const hours = [
+    "6am", "7am", "8am", "9am", "10am", "11am",
+    "12pm", "1pm", "2pm", "3pm", "4pm", "5pm"
+  ];
+  let html = "<table class='table table-responsive' id='calendarTable'><thead><tr><th></th>";
+  for (let col = 0; col < 12; col++) {
+    html += `<th>${hours[col]}</th>`;
+  }
+  html += "</tr></thead><tbody>";
   for (let row = 0; row < 5; row++) {
-    html += "<tr>";
+    html += `<tr><th>${weekdays[row]}</th>`;
     for (let col = 0; col < 12; col++) {
       const idx = row * 12 + col;
       html += `<td>${calendar[idx].join("/")}</td>`;
     }
     html += "</tr>";
   }
-  html += "</table>";
+  html += "</tbody></table>";
   document.getElementById("calendarData").innerHTML = html;
   // calendar array is now filled as specified
 }

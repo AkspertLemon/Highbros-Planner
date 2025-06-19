@@ -86,3 +86,40 @@ input:-webkit-autofill:active{
   font-family:Verdana, Geneva, Tahoma, sans-serif;
   /* border: dashed; */
 }
+#calendarTable {
+    width: 100%;
+    border-collapse: collapse;
+    background: #e6f7f1;
+    margin: 0 auto;
+    font-size: 0.5em;
+    border-radius: 2em;
+}
+#calendarTable th, #calendarTable td {
+    border: 1px solid #1b4d3e;
+    padding: 0.5em 0.7em;
+    text-align: center;
+    min-width: 20px;
+}
+#calendarTable th {
+    background: #1b4d3e;
+    color: #fff;
+    font-weight: bold;
+}
+#calendarTable tr:nth-child(even) td {
+    background: #c8ede0;
+}
+#calendarTable tr:hover td {
+    background: #b2e0d6;
+}
+#calendarTable thead th {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+#calendarTable th:first-child {
+    background: #1b4d3e;
+    color: #fff;
+    position: sticky;
+    left: 0;
+    z-index: 1;
+}
