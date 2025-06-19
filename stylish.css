@@ -71,5 +71,18 @@ input:-webkit-autofill:active{
     -webkit-box-shadow: 0 0 0 30px aquamarine inset !important;
 }
 #calendarData {
-    font-size: 1em;
+    font-size: clamp(1em,2em,3em);
+    overflow: hidden;
+}
+#hexcode {
+  white-space: nowrap;         /* Prevent line breaks */
+  overflow: hidden;            /* Hide overflow */
+  text-overflow: ellipsis;     /* Optional: show ... when overflowed */
+  font-size: clamp(0.5rem, 5vw, 2rem); /* Responsive font size */
+  border: inset;
+  border-radius: 3px;
+  border-width: 2px;
+  background-color: rgb(49, 182, 49);
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  /* border: dashed; */
 }
