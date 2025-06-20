@@ -7,14 +7,16 @@ function addNameHex() {
     const name = inputValue.split('#')[0];
     const hexcode = inputValue.split('#')[1];
     const listItem = document.createElement('li');
-    listItem.textContent = name;
+    listItem.classList.add("row")
+    listItem.textContent =name;
     listItem.setAttribute('data-hexcode', hexcode);
 
     const deleteButton = document.createElement('button');
     const toggleButton = document.createElement('button');
     deleteButton.innerHTML = "Del";
     toggleButton.innerHTML = "Hide";
-
+    deleteButton.classList.add("col-auto","delBut")
+    toggleButton.classList.add("col-auto")
     deleteButton.onclick = () => {
       nameHexList.removeChild(listItem);
     };
@@ -26,6 +28,7 @@ function addNameHex() {
         listItem.disabled = false;
         toggleButton.innerHTML = "Hide";
       } else {
+        listItem.style.color = 'white'
         listItem.style.backgroundColor = '#00281b';
         listItem.style.textDecoration = 'line-through';
         listItem.disabled = true;
