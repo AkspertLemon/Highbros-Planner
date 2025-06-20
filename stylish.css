@@ -1,129 +1,150 @@
-#bg,body {
-    background-color: darkslategrey;
-    background-image: url(Pictures/BG-2.png);
-    font:sans-serif;
-}
 /* #extractor{
     position: absolute;
     top: 10px;
     left: 7%;
     height: 21%;
     } */
-#tables{
-    /* position: absolute;
-    bottom: 3px;
-    left: 7%; 
-    height: 90%; */
-    }
-#calendar{
-    /* position: absolute;
-    right: 7%; */
-    /* height: 90%; */
-    /* width: 55%; */
+#bg {
+  background-color: darkslategrey;
+  background-image: url(Pictures/BG-2.png);
+  font: sans-serif;
 }
-#extractButton,#copyButton{
-    cursor: pointer;
-    /* position: absolute; */
-    background-color: yellowgreen;
-    border-radius: 0.5em;
-    text-align: left;
-    font-size: small;
-    /* margin-left: 10%; margin-right: auto;
-    width:5%; */
+
+body {
+  background-color: darkslategrey;
+  background-image: url(Pictures/BG-2.png);
+  font: sans-serif;
 }
-#extractButton:hover,#copyButton:hover{
-    background-color: rgb(182, 228, 89);
+
+#extractButton {
+  cursor: pointer;
+  background-color: yellowgreen;
+  border-radius: 0.5em;
+  text-align: left;
+  font-size: small;
 }
-#copyButton:disabled{
-    opacity: 0;
+#extractButton:hover {
+  background-color: rgb(182, 228, 89);
 }
-#htmlInput{color: #8a8888;resize: none;}
-#nameInput{
-    color: black;
-    margin-bottom: 3%;
+
+#copyButton {
+  cursor: pointer;
+  background-color: yellowgreen;
+  border-radius: 0.5em;
+  text-align: left;
+  font-size: small;
 }
-#tables li{
-    display: flex;
-    background-color:rgb(0, 161, 108);
-    padding: 5px 10px;
-    width: 30%;
-    margin-bottom: 5px;
+#copyButton:hover {
+  background-color: rgb(182, 228, 89);
 }
-.forms{
-    border-radius: 7px;
-    background-color: aquamarine;
-    border: 5;
-    border-color: black;
+#copyButton:disabled {
+  opacity: 0;
 }
-.menu{
-    background-color: cadetblue; 
-    border-radius: 22px;
-    /* padding-top: 10px;
-    padding-bottom: 50px;
-    width: 25%;
-    margin-bottom: 15px; */
-    border: 3px solid black;
+
+#htmlInput {
+  color: #8a8888;
+  resize: none;
 }
-.table{
-   display: block !important;
-   overflow-x: auto !important;
-   width: 100% !important;
- }
-input:-webkit-autofill,
-input:-webkit-autofill:hover, 
-input:-webkit-autofill:focus, 
-input:-webkit-autofill:active{
-    -webkit-box-shadow: 0 0 0 30px aquamarine inset !important;
+
+#nameInput {
+  color: black;
+  margin-bottom: 3%;
 }
+
+#tables li {
+  display: flex;
+  background-color: rgb(0, 161, 108);
+  padding: 5px 10px;
+  width: 30%;
+  margin-bottom: 5px;
+}
+
+.forms {
+  border-radius: 7px;
+  background-color: aquamarine;
+  border: 5;
+  border-color: black;
+}
+
+.menu {
+  background-color: cadetblue;
+  border-radius: 22px;
+  border: 3px solid black;
+}
+
+.table {
+  display: block !important;
+  overflow-x: auto !important;
+  width: 100% !important;
+}
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 30px aquamarine inset !important;
+}
+input:-webkit-autofill:hover {
+  -webkit-box-shadow: 0 0 0 30px aquamarine inset !important;
+}
+input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 30px aquamarine inset !important;
+}
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px aquamarine inset !important;
+}
+
 #calendarData {
-    font-size: clamp(1em,2em,3em);
-    overflow: hidden;
+  font-size: 2em;
+  overflow: hidden;
 }
+
 #hexcode {
-  white-space: nowrap;         /* Prevent line breaks */
-  overflow: hidden;            /* Hide overflow */
-  text-overflow: ellipsis;     /* Optional: show ... when overflowed */
-  font-size: clamp(0.5rem, 5vw, 2rem); /* Responsive font size */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: clamp(0.5rem, 5vw, 2rem);
   border: inset;
   border-radius: 3px;
   border-width: 2px;
-  background-color: rgb(49, 182, 49);
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
-  /* border: dashed; */
+  background-color: rgb(0, 161, 108);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
 #calendarTable {
-    width: 100%;
-    border-collapse: collapse;
-    background: #e6f7f1;
-    margin: 0 auto;
-    font-size: 0.5em;
-}
-#calendarTable th, #calendarTable td {
-    border: 1px solid #1b4d3e;
-    padding: 0.5em 0.7em;
-    text-align: center;
-    min-width: 20px;
+  width: 100%;
+  border-collapse: collapse;
+  background: #e6f7f1;
+  margin: 0 auto;
+  font-size: 0.5em;
 }
 #calendarTable th {
-    background: #1b4d3e;
-    color: #fff;
-    font-weight: bold;
-}
-#calendarTable tr:nth-child(even) td {
-    background: #c8ede0;
-}
-#calendarTable tr:hover td {
-    background: #b2e0d6;
-}
-#calendarTable thead th {
-    position: sticky;
-    top: 0;
-    z-index: 2;
+  border: 1px solid #1b4d3e;
+  padding: 0.5em 0.7em;
+  text-align: center;
+  min-width: 20px;
+  background: #1b4d3e;
+  color: #fff;
+  font-weight: bold;
 }
 #calendarTable th:first-child {
-    background: #1b4d3e;
-    color: #fff;
-    position: sticky;
-    left: 0;
-    z-index: 1;
+  background: #1b4d3e;
+  color: #fff;
+  position: sticky;
+  left: 0;
+  z-index: 1;
 }
+#calendarTable td {
+  border: 1px solid #1b4d3e;
+  padding: 0.5em 0.7em;
+  text-align: center;
+  min-width: 20px;
+}
+#calendarTable tr:nth-child(even) td {
+  background: #c8ede0;
+}
+#calendarTable tr:hover td {
+  background: #b2e0d6;
+}
+#calendarTable thead th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}/*# sourceMappingURL=stylish.css.map */
