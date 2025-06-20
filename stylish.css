@@ -164,4 +164,20 @@ input:-webkit-autofill:active {
 ion-icon {
   vertical-align: middle;
   font-size: 1.4em;
+}
+
+.cell-empty {
+  background-color: #d4edda;
+}
+
+.cell-low {
+  background-color: #fff3cd;
+}
+
+.cell-medium {
+  background-color: #f8d7da;
+}
+
+.cell-full {
+  background-color: #f5c6cb;
 }/*# sourceMappingURL=stylish.css.map */

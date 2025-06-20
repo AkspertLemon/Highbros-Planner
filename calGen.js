@@ -1,4 +1,19 @@
+//Calendar generate button
+document.addEventListener('DOMContentLoaded',()=>{
+  document.getElementById('generateButton').addEventListener('click',()=>{
+    CalendarGenerate();
+    colorCodeCalendarCells();
+  })
+})
 
+//Hex List add button
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('addButton').addEventListener('click', () => {
+    addNameHex();
+  });
+});
+
+//Adds name into the hex list
 function addNameHex() {
   const nameHexInput = document.getElementById('nameHexInput');
   const nameHexList = document.getElementById('nameHexList');
@@ -48,12 +63,7 @@ function addNameHex() {
     console.log("Invalid hexcode");
   }
 }
-document.addEventListener('DOMContentLoaded', () => {
-  document.getElementById('addButton').addEventListener('click', () => {
-    addNameHex();
-    CalendarGenerate();
-  });
-});
+
 
 // CalendarGenerate: Generates a calendar array from visible (toggled on) list items
 function CalendarGenerate() {
@@ -103,12 +113,8 @@ function CalendarGenerate() {
   document.getElementById("calendarData").innerHTML = html;
   // calendar array is now filled as specified
 }
-document.addEventListener('DOMContentLoaded',()=>{
-  document.getElementById('generateButton').addEventListener('click',()=>{
-    CalendarGenerate();
-  })
-})
-
+//Used to toggle the eye button in the list, had to write the on button on 3 lines
+//How i feel after writing a function that improves effeciency qof by 1%
 function toggleEye(button,state = true) {
     if (state) {
       button.innerHTML = '<ion-icon title="Showing" name="eye"></ion-icon>';
@@ -116,4 +122,30 @@ function toggleEye(button,state = true) {
     else {
       button.innerHTML = '<ion-icon title="Hidden" name="eye-off"></ion-icon>';
     }
+}
+//Used to colour the table, entirely chat gpt generated, dont know how it works
+function colorCodeCalendarCells() {
+  const calendarTable = document.querySelector("#calendar table");
+  if (!calendarTable) return;
+
+  const cells = calendarTable.querySelectorAll("td");
+
+  cells.forEach(cell => {
+    const names = cell.innerText.trim().split(/\s*,\s*/).filter(n => n !== "");
+    const count = names.length;
+
+    // Remove any existing classes first
+    cell.classList.remove("cell-empty", "cell-low", "cell-medium", "cell-full");
+
+    // Apply class based on count
+    if (count === 0) {
+      cell.classList.add("cell-empty");
+    } else if (count === 1) {
+      cell.classList.add("cell-low");
+    } else if (count === 2) {
+      cell.classList.add("cell-medium");
+    } else {
+      cell.classList.add("cell-full");
+    }
+  });
 }
