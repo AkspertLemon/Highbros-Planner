@@ -15,7 +15,7 @@
 </head>
 <body>
     <div class="container-fluid" style="height: 100%;">
-        <div class="row mt-3">
+        <div class="row mt-lg-5">
          <div class="col-12 col-lg-4 mt-3">
             <!-- Extractor Start -->
             <div class="menu container" id="extractor">
@@ -40,19 +40,19 @@
                 <div class="row justify-content-center" style="margin-top: 1em;">
                     <input class="col-9 forms" type="text" id="nameHexInput" class="forms" placeholder="Enter name#hexcode">
                     <br class="col-1">
-                    <button class="col-1 pushybutts" id="addButton"><ion-icon name="add-outline"></ion-icon></button>
+                    <button class="col-1 pushybutts" id="addButton" shape="round" title="Add">+</button>
                 </div>
                 <ul id="nameHexList"></ul>
                 <!-- Generate Button -->
                 <div class="row justify-content-center m-2">
-                    <button class="col-auto pushybutts" id="generateButton"><ion-icon name="calendar-outline" size="large" aria-label="Generate your calendar!"></ion-icon></button>
+                    <button class="col-auto pushybutts"  id="generateButton"><ion-icon title="Generate your calendar button?!?" name="calendar-outline" size="large" aria-label="Generate your calendar!"></ion-icon></button>
                 </div>
             </div>
          </div>
          <!-- Left side end -->
          <!-- Calender Start -->
          <div class="menu col-12 col-lg-8 mt-3" id="calendar">
-            <div>
+            <div class="row justify-content-cente my-lg-5">
                 <div id="calendarData"></div>
             </div>
          </div>

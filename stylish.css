@@ -16,21 +16,20 @@ body {
   font: sans-serif;
 }
 
-.pushybutts {
+.pushybutts, #nameHexList li button {
   cursor: pointer;
   background-color: yellowgreen;
   border-radius: 0.5em;
   text-align: left;
   font-size: small;
   border: inset;
-  text-align: center;
 }
-.pushybutts:hover {
+.pushybutts:hover, #nameHexList li button:hover {
   font-weight: bold;
   background-color: rgb(182, 228, 89);
   border: double;
 }
-.pushybutts:disabled {
+.pushybutts:disabled, #nameHexList li button:disabled {
   opacity: 0;
 }
 
@@ -44,14 +43,14 @@ body {
   margin-bottom: 3%;
 }
 
-#tables li {
+#nameHexList li {
   display: flex;
   background-color: rgb(0, 161, 108);
   padding: 5px 10px;
-  width: 30%;
+  width: 70%;
   margin-bottom: 5px;
+  border-radius: 3em;
 }
-
 .forms {
   border-radius: 7px;
   background-color: aquamarine;
@@ -113,7 +112,6 @@ input:-webkit-autofill:active {
 #calendarTable {
   width: 100%;
   border-collapse: collapse;
-  background: #e6f7f1;
   margin: 0 auto;
   font-size: 0.5em;
 }
@@ -132,6 +130,7 @@ input:-webkit-autofill:active {
   position: sticky;
   left: 0;
   z-index: 1;
+  border: #1b4d3e;
 }
 #calendarTable td {
   border: 1px solid #1b4d3e;
