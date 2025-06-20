@@ -16,28 +16,21 @@ body {
   font: sans-serif;
 }
 
-#extractButton {
+.pushybutts {
   cursor: pointer;
   background-color: yellowgreen;
   border-radius: 0.5em;
   text-align: left;
   font-size: small;
+  border: inset;
+  text-align: center;
 }
-#extractButton:hover {
+.pushybutts:hover {
+  font-weight: bold;
   background-color: rgb(182, 228, 89);
+  border: double;
 }
-
-#copyButton {
-  cursor: pointer;
-  background-color: yellowgreen;
-  border-radius: 0.5em;
-  text-align: left;
-  font-size: small;
-}
-#copyButton:hover {
-  background-color: rgb(182, 228, 89);
-}
-#copyButton:disabled {
+.pushybutts:disabled {
   opacity: 0;
 }
 
@@ -106,6 +99,15 @@ input:-webkit-autofill:active {
   border-width: 2px;
   background-color: rgb(0, 161, 108);
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+#hexcode:disabled {
+  opacity: 0;
+}
+
+#generateButton {
+  border-radius: 3em;
+  border: 2;
+  border-color: black;
 }
 
 #calendarTable {

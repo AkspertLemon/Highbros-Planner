@@ -25,27 +25,27 @@
                 <div class="row justify-content-center">
                     <textarea id="htmlInput" class="forms col-8" rows="1">Paste inspect element here:</textarea>
                     <br class="col-1">
-                    <button style="white-space: nowrap;" id="extractButton" class="col-auto" onclick="extractTimetable()">Extract<ion-icon name="bulb-outline"></ion-icon></button>
+                    <button style="white-space: nowrap;" id="extractButton" class="pushybutts col-auto" onclick="extractTimetable()">Extract<ion-icon name="bulb-outline"></ion-icon></button>
                 </div>
             <!-- Copy Hexcode -->
                 <div class="row justify-content-center" style="margin-bottom: 1em;margin-top: 1em;">
-                     <h3 id="hexcode" class="col-7"> </h3>
+                     <h3 id="hexcode" class="col-7" disabled> </h3>
                      <br class="col-1">
-                     <button  class="col-auto" id="copyButton" onclick="copyHexCode()" disabled>Copy</button>
+                     <button  class="col-auto pushybutts" id="copyButton" onclick="copyHexCode()" disabled>Copy</button>
                 </div>
             </div>
             <br>
             <!-- Table section left -->
             <div class="menu container" id="tables">
                 <div class="row justify-content-center" style="margin-top: 1em;">
-                    <input class="col-9" type="text" id="nameHexInput" class="forms" placeholder="Enter name#hexcode">
+                    <input class="col-9 forms" type="text" id="nameHexInput" class="forms" placeholder="Enter name#hexcode">
                     <br class="col-1">
-                    <button class="col-1" id="addButton">+</button>
+                    <button class="col-1 pushybutts" id="addButton"><ion-icon name="add-outline"></ion-icon></button>
                 </div>
                 <ul id="nameHexList"></ul>
                 <!-- Generate Button -->
-                <div class="container justify-content-center">
-                    <button class="col-3" id="generateButton">Generate</button>
+                <div class="row justify-content-center m-2">
+                    <button class="col-auto pushybutts" id="generateButton"><ion-icon name="calendar-outline" size="large" aria-label="Generate your calendar!"></ion-icon></button>
                 </div>
             </div>
          </div>
