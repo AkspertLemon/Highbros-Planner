@@ -149,12 +149,6 @@ input:-webkit-autofill:active {
   text-align: center;
   min-width: 20px;
 }
-#calendarTable tr:nth-child(even) td {
-  background: #c8ede0;
-}
-#calendarTable tr:hover td {
-  background: #b2e0d6;
-}
 #calendarTable thead th {
   position: sticky;
   top: 0;
@@ -167,17 +161,17 @@ ion-icon {
 }
 
 .cell-empty {
-  background-color: #d4edda;
+  background-color: #4bbd66 !important;
 }
 
 .cell-low {
-  background-color: #fff3cd;
+  background-color: #b3e63e !important;
 }
 
 .cell-medium {
-  background-color: #f8d7da;
+  background-color: #b3575f !important;
 }
 
 .cell-full {
-  background-color: #f5c6cb;
+  background-color: #b33c48 !important;
 }/*# sourceMappingURL=stylish.css.map */

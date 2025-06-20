@@ -125,15 +125,16 @@ function toggleEye(button,state = true) {
 }
 //Used to colour the table, entirely chat gpt generated, dont know how it works
 function colorCodeCalendarCells() {
-  const calendarTable = document.querySelector("#calendar table");
+  console.log("Function called");
+  const calendarTable = document.querySelector("#calendarData table");
   if (!calendarTable) return;
 
   const cells = calendarTable.querySelectorAll("td");
 
   cells.forEach(cell => {
-    const names = cell.innerText.trim().split(/\s*,\s*/).filter(n => n !== "");
+    const names = cell.innerText.trim().split(/\s*\/\s*/).filter(n => n !== "");
     const count = names.length;
-
+    console.log(count);
     // Remove any existing classes first
     cell.classList.remove("cell-empty", "cell-low", "cell-medium", "cell-full");
 
