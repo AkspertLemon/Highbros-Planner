@@ -1,3 +1,4 @@
+
 function addNameHex() {
   const nameHexInput = document.getElementById('nameHexInput');
   const nameHexList = document.getElementById('nameHexList');
@@ -11,38 +12,40 @@ function addNameHex() {
     listItem.textContent =name;
     listItem.setAttribute('data-hexcode', hexcode);
 
-    const deleteButton = document.createElement('button');
     const toggleButton = document.createElement('button');
-    deleteButton.innerHTML = "Del";
-    toggleButton.innerHTML = "Hide";
-    deleteButton.classList.add("col-auto","delBut")
-    toggleButton.classList.add("col-auto")
+    const deleteButton = document.createElement('button');
+    toggleEye(toggleButton,true) //Calls the function auto sets it to open eye
+    deleteButton.innerHTML = '<ion-icon title="Delete" name="trash"></ion-icon>';
+    deleteButton.classList.add("col-auto")
+    toggleButton.classList.add("col-auto","delBut")
     deleteButton.onclick = () => {
       nameHexList.removeChild(listItem);
     };
 
     toggleButton.onclick = () => {
       if (listItem.style.textDecoration === 'line-through') {
+        listItem.style.color = "black"
         listItem.style.backgroundColor = '';
         listItem.style.textDecoration = '';
         listItem.disabled = false;
-        toggleButton.innerHTML = "Hide";
+        toggleEye(toggleButton,true)
       } else {
         listItem.style.color = 'white'
         listItem.style.backgroundColor = '#00281b';
         listItem.style.textDecoration = 'line-through';
         listItem.disabled = true;
-        toggleButton.innerHTML = "Show";
+        toggleEye(toggleButton,false)
       }
     };
 
-    listItem.appendChild(deleteButton);
     listItem.appendChild(toggleButton);
+    listItem.appendChild(deleteButton);
     nameHexList.appendChild(listItem);
 
     nameHexInput.value = '';
   } else {
-    alert('Invalid input format. Please use the format: name#hexcode');
+    // alert('Invalid input format. Please use the format: name#hexcode');
+    console.log("Invalid hexcode");
   }
 }
 document.addEventListener('DOMContentLoaded', () => {
@@ -75,8 +78,8 @@ function CalendarGenerate() {
       }
     }
   }
-  console.log("Calendar generated");
-  console.log(calendar);
+  // console.log("Calendar generated");
+  // console.log(calendar);
   // Format calendar as 5 rows and 12 columns with headers
   const weekdays = ["Mon", "Tue", "Wed", "Thu", "Fri"];
   const hours = [
@@ -105,3 +108,12 @@ document.addEventListener('DOMContentLoaded',()=>{
     CalendarGenerate();
   })
 })
+
+function toggleEye(button,state = true) {
+    if (state) {
+      button.innerHTML = '<ion-icon title="Showing" name="eye"></ion-icon>';
+    }
+    else {
+      button.innerHTML = '<ion-icon title="Hidden" name="eye-off"></ion-icon>';
+    }
+}
