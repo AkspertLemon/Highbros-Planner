@@ -1,71 +1,177 @@
-body{
-    background-color: darkslategrey;
-    background-image: url(Pictures/BG-2.png);
-    font:sans-serif;
-}
-#extractor{
+/* #extractor{
     position: absolute;
     top: 10px;
     left: 7%;
     height: 21%;
-    }
-#tables{
-    position: absolute;
-    bottom: 3px;
-    left: 7%;
-    height: 60%;
-    }
-#calendar{
-    position: absolute;
-    right: 7%;
-    height: 90%;
-    width: 55%;
+    } */
+#bg {
+  background-color: darkslategrey;
+  background-image: url(Pictures/BG-2.png);
+  font: sans-serif;
 }
-#extractButton,#copyButton{
-    cursor: pointer;
-    position: absolute;
-    background-color: yellowgreen;
-    border-radius: 5px;
-    margin-left: 10%; margin-right: auto;
+
+body {
+  background-color: darkslategrey;
+  background-image: url(Pictures/BG-2.png);
+  font: sans-serif;
 }
-#extractButton:hover,#copyButton:hover{
-    background-color: rgb(182, 228, 89);
+
+.pushybutts, #nameHexList li button {
+  cursor: pointer;
+  background-color: yellowgreen;
+  border-radius: 0.5em;
+  text-align: left;
+  font-size: small;
+  border: inset;
 }
-#copyButton:disabled{
-    opacity: 0;
+.pushybutts:hover, #nameHexList li button:hover {
+  font-weight: bold;
+  background-color: rgb(182, 228, 89);
+  border: double;
 }
-#htmlInput{color: #757575;resize: none;}
-#nameInput{
-    color: black;
-    margin-bottom: 3%;
+.pushybutts:disabled, #nameHexList li button:disabled {
+  opacity: 0;
 }
-#tables li{
-    display: flex;
-    background-color:rgb(0, 161, 108);
-    padding: 5px 10px;
-    width: 30%;
-    margin-bottom: 5px;
+
+#htmlInput {
+  color: #8a8888;
+  resize: none;
 }
-.forms{
-    border-radius: 7px;
-    background-color: aquamarine;
-    border: 5;
-    border-color: black;
-    width: 48%;
-    margin-left: 10%;
+
+#nameInput {
+  color: black;
+  margin-bottom: 3%;
 }
-.menu{
-    background-color: cadetblue; 
-    border-radius: 22px;
-    padding-top: 10px;
-    padding-bottom: 50px;
-    width: 25%;
-    margin-bottom: 15px;
-    border: 3px solid black;
+
+#nameHexList li {
+  display: flex;
+  background-color: rgb(0, 161, 108);
+  padding: 0.4em 1em;
+  padding-left: 3em;
+  width: 100%;
+  margin-bottom: 5px;
+  border-radius: 3em;
+  margin-top: 0.8em;
+  font-weight: bold;
 }
-input:-webkit-autofill,
-input:-webkit-autofill:hover, 
-input:-webkit-autofill:focus, 
-input:-webkit-autofill:active{
-    -webkit-box-shadow: 0 0 0 30px aquamarine inset !important;
+#nameHexList li button {
+  border-radius: 3rem;
 }
+#nameHexList li .delBut {
+  margin-left: auto;
+  margin-right: 0.2em;
+}
+
+.forms {
+  border-radius: 7px;
+  background-color: aquamarine;
+  border: 5;
+  border-color: black;
+}
+
+.menu {
+  background-color: cadetblue;
+  border-radius: 22px;
+  border: 3px solid black;
+}
+
+.table {
+  display: block !important;
+  overflow-x: auto !important;
+  width: 100% !important;
+}
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 30px aquamarine inset !important;
+}
+input:-webkit-autofill:hover {
+  -webkit-box-shadow: 0 0 0 30px aquamarine inset !important;
+}
+input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 30px aquamarine inset !important;
+}
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px aquamarine inset !important;
+}
+
+#calendarData {
+  font-size: 2em;
+  overflow: hidden;
+}
+
+#hexcode {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: clamp(0.5rem, 5vw, 2rem);
+  border: inset;
+  border-radius: 3px;
+  border-width: 2px;
+  background-color: rgb(0, 161, 108);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+#hexcode:disabled {
+  opacity: 0;
+}
+
+#generateButton {
+  border-radius: 3em;
+  border: 2;
+  border-color: black;
+}
+
+#calendarTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 auto;
+  font-size: 0.5em;
+}
+#calendarTable th {
+  border: 1px solid #1b4d3e;
+  padding: 0.5em 0.7em;
+  text-align: center;
+  min-width: 20px;
+  background: #1b4d3e;
+  color: #fff;
+  font-weight: bold;
+}
+#calendarTable th:first-child {
+  background: #1b4d3e;
+  color: #fff;
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  border: #1b4d3e;
+}
+#calendarTable td {
+  border: 1px solid #1b4d3e;
+  padding: 0.5em 0.7em;
+  text-align: center;
+  min-width: 20px;
+}
+#calendarTable thead th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+ion-icon {
+  vertical-align: middle;
+  font-size: 1.4em;
+}
+
+.cell-empty {
+  background-color: #4bbd66 !important;
+}
+
+.cell-low {
+  background-color: #b3e63e !important;
+}
+
+.cell-medium {
+  background-color: #b3575f !important;
+}
+
+.cell-full {
+  background-color: #b33c48 !important;
+}/*# sourceMappingURL=stylish.css.map */
