@@ -1,3 +1,19 @@
+//Calendar generate button
+document.addEventListener('DOMContentLoaded',()=>{
+  document.getElementById('generateButton').addEventListener('click',()=>{
+    CalendarGenerate();
+    colorCodeCalendarCells();
+  })
+})
+
+//Hex List add button
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('addButton').addEventListener('click', () => {
+    addNameHex();
+  });
+});
+
+//Adds name into the hex list
 function addNameHex() {
   const nameHexInput = document.getElementById('nameHexInput');
   const nameHexList = document.getElementById('nameHexList');
@@ -7,47 +23,47 @@ function addNameHex() {
     const name = inputValue.split('#')[0];
     const hexcode = inputValue.split('#')[1];
     const listItem = document.createElement('li');
-    listItem.textContent = name;
+    listItem.classList.add("row")
+    listItem.textContent =name;
     listItem.setAttribute('data-hexcode', hexcode);
 
-    const deleteButton = document.createElement('button');
     const toggleButton = document.createElement('button');
-    deleteButton.innerHTML = "Del";
-    toggleButton.innerHTML = "Hide";
-
+    const deleteButton = document.createElement('button');
+    toggleEye(toggleButton,true) //Calls the function auto sets it to open eye
+    deleteButton.innerHTML = '<ion-icon title="Delete" name="trash"></ion-icon>';
+    deleteButton.classList.add("col-auto")
+    toggleButton.classList.add("col-auto","delBut")
     deleteButton.onclick = () => {
       nameHexList.removeChild(listItem);
     };
 
     toggleButton.onclick = () => {
       if (listItem.style.textDecoration === 'line-through') {
+        listItem.style.color = "black"
         listItem.style.backgroundColor = '';
         listItem.style.textDecoration = '';
         listItem.disabled = false;
-        toggleButton.innerHTML = "Hide";
+        toggleEye(toggleButton,true)
       } else {
+        listItem.style.color = 'white'
         listItem.style.backgroundColor = '#00281b';
         listItem.style.textDecoration = 'line-through';
         listItem.disabled = true;
-        toggleButton.innerHTML = "Show";
+        toggleEye(toggleButton,false)
       }
     };
 
-    listItem.appendChild(deleteButton);
     listItem.appendChild(toggleButton);
+    listItem.appendChild(deleteButton);
     nameHexList.appendChild(listItem);
 
     nameHexInput.value = '';
   } else {
-    alert('Invalid input format. Please use the format: name#hexcode');
+    // alert('Invalid input format. Please use the format: name#hexcode');
+    console.log("Invalid hexcode");
   }
 }
-document.addEventListener('DOMContentLoaded', () => {
-  document.getElementById('addButton').addEventListener('click', () => {
-    addNameHex();
-    CalendarGenerate();
-  });
-});
+
 
 // CalendarGenerate: Generates a calendar array from visible (toggled on) list items
 function CalendarGenerate() {
@@ -76,34 +92,69 @@ function CalendarGenerate() {
       }
     }
   }
-  console.log("Calendar generated");
-  console.log(calendar);
-  // Format calendar as 5 rows and 12 columns with day headers and time column headers
-  const dayHeaders = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
-  const timeHeaders = [
-    "6am", "7am", "8am", "9am", "10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm"
+  // console.log("Calendar generated");
+  // console.log(calendar);
+  // Format calendar as 5 rows and 12 columns with headers
+  const weekdays = ["Mon", "Tue", "Wed", "Thu", "Fri"];
+  const hours = [
+    "6am", "7am", "8am", "9am", "10am", "11am",
+    "12pm", "1pm", "2pm", "3pm", "4pm", "5pm"
   ];
-  let html = "<table style='width:100%;height:90vh;text-align:center;border-collapse:collapse;' border='1'><tr><th></th>";
+  let html = "<table class='table table-responsive' id='calendarTable'><thead><tr><th></th>";
   for (let col = 0; col < 12; col++) {
-    html += `<th style='background:#eee;'>${timeHeaders[col]}</th>`;
+    html += `<th>${hours[col]}</th>`;
   }
-  html += "</tr>";
+  html += "</tr></thead><tbody>";
   for (let row = 0; row < 5; row++) {
-    html += `<tr><th style='background:#eee;'>${dayHeaders[row]}</th>`;
+    html += `<tr><th>${weekdays[row]}</th>`;
     for (let col = 0; col < 12; col++) {
       const idx = row * 12 + col;
       const cellData = calendar[idx].join("/");
-      // You can change the cell background colors here:
-      // Green for empty cells, red for filled cells
       if (cellData) {
         html += `<td style='background:#fcc'>${cellData}</td>`; // Red for filled
       } else {
-        html += `<td style='background:#cfc'>Free</td>`; // Green for empty
+        html += `<td style='background:#cfc'>  </td>`; // Green for empty
       }
     }
     html += "</tr>";
   }
-  html += "</table>";
+  html += "</tbody></table>";
   document.getElementById("calendarData").innerHTML = html;
   // calendar array is now filled as specified
+}
+//How i feel after writing a function that improves effeciency qof by 1%
+function toggleEye(button,state = true) {
+    if (state) {
+      button.innerHTML = '<ion-icon title="Showing" name="eye"></ion-icon>';
+    }
+    else {
+      button.innerHTML = '<ion-icon title="Hidden" name="eye-off"></ion-icon>';
+    }
+}
+//Used to colour the table, entirely chat gpt generated, dont know how it works
+function colorCodeCalendarCells() {
+  console.log("Function called");
+  const calendarTable = document.querySelector("#calendarData table");
+  if (!calendarTable) return;
+
+  const cells = calendarTable.querySelectorAll("td");
+
+  cells.forEach(cell => {
+    const names = cell.innerText.trim().split(/\s*\/\s*/).filter(n => n !== "");
+    const count = names.length;
+    console.log(count);
+    // Remove any existing classes first
+    cell.classList.remove("cell-empty", "cell-low", "cell-medium", "cell-full");
+
+    // Apply class based on count
+    if (count === 0) {
+      cell.classList.add("cell-empty");
+    } else if (count === 1) {
+      cell.classList.add("cell-low");
+    } else if (count === 2) {
+      cell.classList.add("cell-medium");
+    } else {
+      cell.classList.add("cell-full");
+    }
+  });
 }

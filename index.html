@@ -3,30 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Highbros Planner</title>
+    <title>Highbrow Planner</title>
+    <link rel="stylesheet" href="Bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="stylish.css">
+    <link rel="icon" href="Pictures/calendar.ico" type="image/x-icon">
     <script src="extractor.js"></script>
     <script src="copy.js"></script>
     <script src="calGen.js"></script>
+    <script src="Bootstrap/bootstrap.min.js"></script>
+    <!-- <link rel="stylish" href="scss/custom.scss">  -->
 </head>
 <body>
-    <div class="menu" id="extractor">
-        <h1 style="text-align: center;">Highbrow Planner</h1>
-        <h3 style="margin-left: 10%; margin-bottom: 2%">Fill these to get code:</h3>
-        <input type="text" id="nameInput" class="forms" placeholder="Enter your name">
-        <textarea id="htmlInput" class="forms" rows="1">Paste inspect element here:</textarea>
-        <button id="extractButton" onclick="extractTimetable()">Extract<ion-icon name="bulb-outline"></ion-icon></button><br>
-        <h3 style="margin-left: 10%;display: inline; background-color: rgb(6, 116, 79);padding: 3px 5px;opacity: 0;" id="hexcode"> </h3>
-        <button id="copyButton" onclick="copyHexCode()" disabled>Copy</button>
+    <div class="container-fluid" style="height: 100%;">
+        <div class="row mt-lg-5">
+         <div class="col-12 col-lg-4 mt-3">
+            <!-- Extractor Start -->
+            <div class="menu container" id="extractor">
+                <h1 style="text-align: center;" class="col-12 display-5"><strong>Highbrow Planner</strong></h1>
+                <p style="margin-bottom: 2%" class="col-12 h4">Fill these to get code:</p>
+                <input type="text" id="nameInput" class="forms col-11" placeholder="Enter your name">
+                <div class="row justify-content-center">
+                    <textarea id="htmlInput" class="forms col-8" rows="1">Paste inspect element here:</textarea>
+                    <br class="col-1">
+                    <button style="white-space: nowrap;" id="extractButton" class="pushybutts col-auto" onclick="extractTimetable()">Extract<ion-icon name="bulb-outline"></ion-icon></button>
+                </div>
+            <!-- Copy Hexcode -->
+                <div class="row justify-content-center" style="margin-bottom: 1em;margin-top: 1em;">
+                     <h3 id="hexcode" class="col-7" disabled> </h3>
+                     <br class="col-1">
+                     <button  class="col-auto pushybutts" id="copyButton" onclick="copyHexCode()" disabled>Copy</button>
+                </div>
+            </div>
+            <br>
+            <!-- Table section left -->
+            <div class="menu container" id="tables">
+                <div class="row justify-content-center" style="margin-top: 1em;">
+                    <input class="col-9 forms" type="text" id="nameHexInput" class="forms" placeholder="Enter name#hexcode">
+                    <br class="col-1">
+                    <button class="col-1 pushybutts" id="addButton" shape="round" title="Add">+</button>
+                </div>
+                <ul id="nameHexList"></ul>
+                <!-- Generate Button -->
+                <div class="row justify-content-center m-2">
+                    <button class="col-auto pushybutts"  id="generateButton"><ion-icon title="Generate your calendar button?!?" name="calendar-outline" size="large" aria-label="Generate your calendar!"></ion-icon></button>
+                </div>
+            </div>
+         </div>
+         <!-- Left side end -->
+         <!-- Calender Start -->
+         <div class="menu col-12 col-lg-8 mt-3" id="calendar">
+            <div class="row justify-content-cente my-lg-5">
+                <div id="calendarData"></div>
+            </div>
+         </div>
+        </div>
     </div>
-    <div class="menu" id="tables">
-        <input type="text" id="nameHexInput" class="forms" placeholder="Enter name#hexcode">
-        <button id="addButton">+</button>
-        <ul id="nameHexList"></ul>
-    </div>
-    <div class="menu" id="calendar">
-        <div id="calendarData"></div>
-    </div>
+    <!-- Icons Ions for copy button -->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
